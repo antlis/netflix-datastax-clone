@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Card from './Card'
+import { FaArrowCircleRight } from "react-icons/fa"
 
 const Section = ({ genre }) => {
   const [movies, setMovies] = useState(null)
@@ -27,10 +28,12 @@ const Section = ({ genre }) => {
           { movies.map((movie, index) => (
             <Card key={index + movie} movie={movie} />
           )) }
-          <div className="more-button" onClick={() => {
+          <button className="more-button" onClick={() => {
             setPageState(pageState)
             fetchData()
-          }}></div>
+          }}>
+            <span><FaArrowCircleRight /></span>
+          </button>
         </div>
       )}
     </>

@@ -65,6 +65,7 @@ body {
 
 .movie-section {
 	display: flex;
+	align-items: center;
 }
 
 .card {
@@ -112,9 +113,19 @@ video::-webkit-media-controls {
 
 .more-button {
 	height: 100%;
+	background: transparent;
+	border: none;
 	display: flex;
 	padding: 40px 10px;
 	border-radius: 0 10px 10px 0;
+}
+
+.more-button:hover {
+	background: rgba(255,255,255,.5);
+}
+
+.more-button svg {
+	fill: #fff;
 }
 
 .more-button:hover {
