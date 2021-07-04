@@ -9,18 +9,16 @@ const App = () => {
   const [genres, setGenres] = useState(null);
   const [limit, setLimit] = useState(genreIncrement);
 
-  const fetchData = async () => {
-    const response = await fetch("/.netlify/functions/getGenres", {
-      method: "POST",
-      body: limit,
-    });
-    const responseBody = await response.json();
-    setGenres(responseBody.data.reference_list.values);
-  };
-
-  console.log(limit);
-
   useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("/.netlify/functions/getGenres", {
+        method: "POST",
+        body: limit,
+      });
+      const responseBody = await response.json();
+      setGenres(responseBody.data.reference_list.values);
+    };
+
     fetchData();
   }, [limit]);
 

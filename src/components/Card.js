@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const Card = ({ movie }) => {
   const [isShown, setIsShown] = useState(false);
-  const { title, duration, thumbnail } = movie;
+  const { title, thumbnail } = movie;
 
   return (
     <div
@@ -22,7 +22,7 @@ const Card = ({ movie }) => {
             <source src={thumbnail} type="video/mp4" />
           </video>
           <div className="info-box">
-            <p>{movie.title}</p>
+            <p>{title}</p>
           </div>
         </>
       )}

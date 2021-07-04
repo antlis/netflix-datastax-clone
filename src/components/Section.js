@@ -6,6 +6,7 @@ const Section = ({ genre }) => {
   const [movies, setMovies] = useState(null)
   const [pageState, setPageState] = useState(null)
 
+  // useCallback cause infinite getMovies calls
   const fetchData = async () => {
     const response = await fetch("/.netlify/functions/getMovies", {
       method: "POST",
@@ -18,6 +19,7 @@ const Section = ({ genre }) => {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line
   }, []);
 
 	return (
