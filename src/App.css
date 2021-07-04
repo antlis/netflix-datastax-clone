@@ -15,10 +15,23 @@ body {
 	top: 0;
 }
 
+.navbar ul {
+	display: flex;
+	align-items: center;
+}
+
 .hero {
 	width: 100%;
 	margin-top: -100px;
 	padding: 0;
+}
+
+.hero .button:first-of-type {
+	margin-right: 20px;
+}
+
+.hero-text {
+	margin-bottom: 30px;
 }
 
 .info-section {
@@ -33,11 +46,17 @@ body {
 }
 
 .button {
+	display: flex;
+	align-items: center;
 	border-radius: 10px;
 	background-color: #fff;
 	color: #000;
 	padding: 10px 20px;
 	margin: 3px;
+}
+
+.button .icon-container {
+	margin-right: 5px;
 }
 
 .more {
@@ -67,6 +86,7 @@ video {
 	float: left;
 	top: 0;
 	padding: none;
+	margin-bottom: 50px;
 }
 
 video::-webkit-media-controls {
@@ -123,8 +143,11 @@ li {
 }
 
 .logo {
-	width: 88px;
-	height: 22px;
+	margin-right: 50px;
+}
+
+.logo img {
+	height: 32px;
 	background-image: url('https://imgur.com/Y9dwM3s');
 	background-size: 88px;
 	margin: 5px;

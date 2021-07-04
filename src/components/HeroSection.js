@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
+import { FaRegPlayCircle } from "react-icons/fa"
+import { FaInfoCircle } from "react-icons/fa"
 
 const HeroSection = () => {
-  const [movie, setMovie] = useState(null)
-  const pageState = null
+  const [movie, setMovie] = useState(null);
+  const pageState = null;
 
   const fetchData = async () => {
     const response = await fetch("/.netlify/functions/getMovies", {
@@ -10,8 +12,8 @@ const HeroSection = () => {
       body: JSON.stringify({ genre: "Sci-Fi", pageState: pageState }),
     });
     const responseBody = await response.json();
-    const movies = responseBody.data.movies_by_genre.values
-    setMovie(movies[Math.floor(Math.random() * movies.length)])
+    const movies = responseBody.data.movies_by_genre.values;
+    setMovie(movies[Math.floor(Math.random() * movies.length)]);
   };
 
   useEffect(() => {
@@ -27,14 +29,18 @@ const HeroSection = () => {
           </video>
 
           <div className="info-section">
-            <h3 className="hero-blurb">{movie.synopsis}</h3>
+            <h3 className="hero-text">{movie.synopsis}</h3>
             <div className="button-section">
               <div className="button play">
-                <span></span>
+                <span className="icon-container">
+                  <FaRegPlayCircle />
+                </span>
                 Play
               </div>
               <div className="button more">
-                <span></span>
+                <span className="icon-container">
+                  <FaInfoCircle />
+                </span>
                 More info
               </div>
             </div>
